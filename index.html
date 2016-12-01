@@ -1,0 +1,82 @@
+<html>
+<head>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.js"></script>
+<link rel="stylesheet" href="font/stylesheet.css" type="text/css" charset="utf-8" />
+
+<style type="text/css">
+html, body {
+	background-color: #000000;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+/* Font */
+p {
+	font-family: 'lucidgrotesk-beta-bold';
+	font-size: 48px;
+	font-weight: bold;
+	line-height: 1.1;
+	letter-spacing: 1.5;
+	color: #fff;
+}
+
+/* Link colours */
+a:link {
+	color: #fff;
+}
+a:visited {
+	color: #fff;
+}
+a:hover {
+	color: #000;
+}
+a:active {
+	color: #aaa;
+}
+
+.gradient {
+	/* Default background, before mouse move */
+	background-image: -webkit-linear-gradient(225deg, #000, #666);
+	background-image: -moz-linear-gradient(225deg, #000, #666);
+	background-image: -o-linear-gradient(225deg, #000, #666);
+	background-image: -ms-linear-gradient(225deg, #000, #666);
+	background-image: linear-gradient(225deg, #000, #666);
+
+	/* Positioning */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	/* Align contents using flexbox */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+</style>
+
+<script type='text/javascript'>//<![CDATA[
+$(function(){
+	$(".gradient").mousemove(function(event) {
+		var w = $(this).width(),
+		    pct = 360 * (+event.pageX)/w,
+		    bg = "linear-gradient(" + pct + "deg, #000, #666)";
+		$(".gradient").css("background-image", bg);
+	});
+});//]]> 
+</script>
+
+</head>
+<body>
+	<div class="gradient">
+		<p>PAVILION IS A LONDON-BASED<br/>GRAPHIC AND TYPE DESIGN STUDIO</p>
+		<p>HOURS OF OPERATION<br/>MONDAY – FRIDAY<br/>9:00 AM – 6:00 PM<br/>CLOSED<br/> 12:00 PM TO 1:00 PM</p>
+		<p>PLEASE <a href="mailto:info@pavilion.studio">EMAIL</a> FOR ENQUIRIES</p>
+	</div>
+</body>
+</html>
